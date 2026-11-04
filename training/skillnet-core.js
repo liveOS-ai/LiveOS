@@ -198,6 +198,7 @@
         steps: Number(existing.steps) || 0,
         examplesSeen: Number(existing.examplesSeen) || 0,
         bestAccuracy: Number(existing.bestAccuracy) || 0,
+        savedAt: typeof existing.savedAt === "string" ? existing.savedAt : null,
         version: 2
       };
     }
@@ -213,7 +214,7 @@
       momentumB1: new Float32Array(HIDDEN_COUNT),
       momentumW2: new Float32Array(w2.length),
       momentumB2: new Float32Array(labels.length),
-      steps: 0, examplesSeen: 0, bestAccuracy: 0, version: 2
+      steps: 0, examplesSeen: 0, bestAccuracy: 0, savedAt: null, version: 2
     };
   }
 
@@ -541,7 +542,7 @@
       momentumW2: Array.from(model.momentumW2 || []),
       momentumB2: Array.from(model.momentumB2 || []),
       steps: model.steps, examplesSeen: model.examplesSeen,
-      bestAccuracy: model.bestAccuracy, version: 2, savedAt: new Date().toISOString()
+      bestAccuracy: model.bestAccuracy, version: 2, savedAt: model.savedAt || new Date().toISOString()
     };
   }
 
