@@ -1,15 +1,35 @@
-# LiveOS
+# LiveOS OS3
 
-Eigenständiges LiveOS-Projekt (OS3) mit Chat, Trainingsoberfläche, SkillNet-Trainingskern und Web-Recherche.
+Eigenständiger LiveOS-Chat mit OS3, Training Engine, SkillNet und öffentlicher Web-Recherche.
 
-Die App verwendet das bereits bestehende Supabase-Projekt, damit Benutzerkonten, Chats, Trainings-Checkpoints und die bisherige OS3-Websuche nicht verloren gehen.
+## Online
 
-## GitHub Pages
+GitHub-Pages-Adresse nach einmaliger Aktivierung unter **Settings → Pages → Deploy from a branch → main → / (root)**:
 
-Repository-Website: https://urlaub-assistent.github.io/LiveOS/
+**https://urlaub-assistent.github.io/LiveOS/**
 
-GitHub Pages muss in den Repository Settings auf **Deploy from a branch → main → / (root)** gesetzt sein.
+Die Trainingsseite liegt unter **/LiveOS/training/**.
 
-## Training
+## Training und Modellstand
 
-Die Trainingsseite liegt unter `/training/`. Sie optimiert einen kleinen Intent-/Routing-Klassifikator, nicht die Gewichte eines großen generativen Sprachmodells. Alle bestätigten Checkpoints werden pro LiveOS-Konto in Supabase gespeichert und sind nach Anmeldung auf den Geräten desselben Kontos verfügbar.
+OS3 hat eine gemeinsame SkillNet-Trainingsbasis pro angemeldetem LiveOS-Konto. Jeder neue Trainingslauf setzt dessen zuletzt gespeicherten Checkpoint fort. Chat und Training lesen und schreiben denselben Checkpoint; Supabase Realtime verteilt bestätigte Updates an bereits geöffnete Chats desselben Kontos. Row Level Security hält die Checkpoints privat.
+
+Die Trainingsmaschine läuft lokal im Browser auf der CPU und benötigt keine bezahlte API oder GPU. Sie nutzt ausgewogene Klassenauswahl, Momentum, Label-Smoothing, Gradient Clipping, Weight Decay, getrennte Validierung und Rücksprung zum besten geprüften Checkpoint. Bestehende OS2-Checkpoints werden migriert.
+
+**Wichtig:** SkillNet ist ein 512-Feature → 64 Hidden-Neuronen → 19 Klassen Intent-/Routing-Klassifikator. Training verbessert die Zuordnung von Anfragen zu vorhandenen LiveOS-Fähigkeiten. Es trainiert kein generatives Sprachmodell, lernt nicht automatisch neue Fakten und macht freie Antworten nicht von selbst besser. Alle Geräte desselben Kontos nutzen denselben Stand; der Gastmodus bleibt lokal. Bitte nicht zwei Trainingsläufe desselben Kontos gleichzeitig starten, da beide den gesamten Checkpoint speichern.
+
+## Verzeichnisstruktur
+
+- `index.html`: LiveOS OS3 Chat
+- `training/`: Training Engine, SkillNet-Core und Web Worker
+- `assets/`: App-Icons
+- `supabase/functions/liveos-web-research/`: öffentliche Web- und YouTube-Recherche
+- `supabase/config.toml`: Supabase-Function-Konfiguration
+
+## Supabase
+
+LiveOS verwendet das bestehende Supabase-Projekt, damit Konten, Chatverläufe und Trainingsdaten erhalten bleiben. Die Recherchefunktion ist dort bereits bereitgestellt. Der Browser nutzt nur den öffentlichen Supabase-Schlüssel; private Schlüssel gehören ausschließlich auf den Server.
+
+## Grenzen
+
+Das Training läuft im Vordergrund des Browsers. Safari/iPadOS kann Hintergrund-Tabs pausieren; dann bleibt der letzte Checkpoint erhalten und kann nach erneutem Öffnen fortgesetzt werden. Die Web-Recherche liest ausschließlich öffentliche Seiten. Private Konten, Logins und Bezahlschranken werden nicht umgangen.
