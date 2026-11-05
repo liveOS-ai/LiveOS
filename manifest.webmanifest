@@ -10,13 +10,13 @@
   "theme_color": "#10243f",
   "icons": [
     {
-      "src": "./assets/liveos-icon.png",
+      "src": "./assets/liveos-icon.png?v=os3-brain",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./assets/liveos-icon.svg",
+      "src": "./assets/liveos-icon.svg?v=os3-brain",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
