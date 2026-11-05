@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#173c70"/><stop offset="1" stop-color="#06142a"/></linearGradient><linearGradient id="c" x2="1" y2="1"><stop stop-color="#8ceaff"/><stop offset="1" stop-color="#2975ff"/></linearGradient></defs><rect x="8" y="8" width="496" height="496" rx="112" fill="url(#b)" stroke="#55b6ff" stroke-opacity=".5" stroke-width="8"/><g fill="none" stroke="url(#c)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"><path d="M315 89c-35-28-90-24-116 8-17 20-23 43-19 65-31 18-50 51-50 88 0 42 25 78 63 96l2 29h116v-30c44-18 70-58 70-105 0-42-23-79-59-98 4-21-1-40-17-53z"/><path d="M256 123v187m0-149-46-31m46 67 49-39m-49 81-50 20m50 12 43 27"/><circle cx="209" cy="130" r="10" fill="#8ceaff"/><circle cx="305" cy="141" r="10" fill="#8ceaff"/><circle cx="206" cy="270" r="10" fill="#8ceaff"/><circle cx="299" cy="291" r="10" fill="#8ceaff"/></g><text x="256" y="443" text-anchor="middle" fill="#eff9ff" font-family="Arial,sans-serif" font-size="84" font-weight="800">OS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="LiveOS Gehirn-Schaltkreis-Symbol">
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+  <g fill="none" stroke="#2b6392" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 91c-23-22-57-30-87-17-29 12-46 39-44 71-36 7-60 39-56 76-31 27-35 76-7 108-7 39 17 75 55 84 4 39 41 63 78 51 22 24 42 24 61 10V91z"/>
+    <path d="M256 91v383"/>
+    <path d="M256 151h43c21 0 34-13 34-34V91"/>
+    <path d="M256 247h106c20 0 31-11 31-31v-15"/>
+    <path d="M256 345h44c20 0 33 13 33 33v34"/>
+    <path d="M171 140c21 6 34 24 34 46"/>
+    <path d="M124 225c24-2 43 10 50 31"/>
+    <path d="M139 322c20-15 45-14 61 3"/>
+    <path d="M205 394c13-14 31-18 51-12"/>
+  </g>
+  <g fill="#ffffff" stroke="#2b6392" stroke-width="20">
+    <circle cx="333" cy="91" r="19"/>
+    <circle cx="393" cy="201" r="19"/>
+    <circle cx="333" cy="412" r="19"/>
+  </g>
+</svg>
