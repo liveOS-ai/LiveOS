@@ -4,7 +4,7 @@ Eigenständiger LiveOS-Chat mit OS3, Training Engine, SkillNet und öffentlicher
 
 ## Online
 
-GitHub-Pages-Adresse nach einmaliger Aktivierung unter **Settings → Pages → Deploy from a branch → main → / (root)**:
+GitHub-Pages-Adresse nach einmaliger Aktivierung unter **Settings → Pages → Build and deployment → Source → GitHub Actions**:
 
 **https://urlaub-assistent.github.io/LiveOS/**
 
