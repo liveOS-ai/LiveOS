@@ -8,7 +8,7 @@ GitHub-Pages-Adresse nach einmaliger Aktivierung unter **Settings → Pages → 
 
 **https://urlaub-assistent.github.io/LiveOS/**
 
-Die Trainingsseite liegt unter **/LiveOS/training/**.
+Die Trainingsseite liegt unter **/LiveOS/training/**. Chat und Trainingsseite nutzen dasselbe Gehirn-Schaltkreis-Logo aus `assets/liveos-icon.svg` und dasselbe PNG für das App-Symbol.
 
 ## Training und Modellstand
 
